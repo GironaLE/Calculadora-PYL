@@ -37,7 +37,7 @@ export default function Sidebar({
   ];
 
   return (
-    <aside className="bg-slate-900 text-white w-full md:w-72 md:min-h-screen">
+    <aside className="bg-slate-900 text-white w-full md:w-80 md:min-h-screen">
      <div className="p-6 border-b border-slate-700">
   <h1 className="text-2xl font-bold tracking-wide">
     LA ESPECIALISTA
