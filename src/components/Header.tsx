@@ -107,6 +107,9 @@ const LaEspecialistaLogo = () => (
   </div>
 );
 
+const LaEspecialistaLogo = () => (
+  {logo}
+);
 export default function Header() {
   return (
     <header className="bg-white h-[70px] border-b border-slate-200 sticky top-0 z-50 px-6 shadow-xs flex items-center justify-between no-print font-sans">
