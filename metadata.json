@@ -1,0 +1,6 @@
+{
+  "name": "Calculadora de Materiales",
+  "description": "Calculadora técnica profesional y modulador de estructuras cruzadas de techos continuos F47 PYL",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
