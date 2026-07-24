@@ -1,4 +1,5 @@
 import { LayoutDashboard, Building2, Layers3, Construction } from 'lucide-react';
+import logo from '../Logo LE2.png';
 
 interface SidebarProps {
   activeModule: string;
@@ -38,20 +39,22 @@ export default function Sidebar({
 
   return (
     <aside className="bg-slate-900 text-white w-full md:w-[420px] md:min-h-screen">
-     <div className="p-6 border-b border-slate-700">
-  <h1 className="text-2xl font-bold tracking-wide">
-    LA ESPECIALISTA
-  </h1>
+<div className="p-6 border-b border-slate-700">
 
-  <p className="text-sm text-slate-400 mt-1">
+  {logo}="La Especialista"
+    className="w-full mb-4"
+  />
+
+  <p className="text-sm text-slate-400">
     Suite Profesional PYL
   </p>
 
   <div className="mt-3">
-    <span className="text-xs bg-blue-600 px-2 py-1 rounded-full">
-      v1.0
+    <span className="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 rounded-full font-semibold">
+      PRO v1.0
     </span>
   </div>
+
 </div>
 
       <nav className="p-4">
