@@ -27,7 +27,7 @@ export default function Sidebar({
       id: 'techos-registrables',
       label: 'Techos Registrables',
       icon: Building2,
-      enabled: false,
+      enabled: true,
     },
     {
       id: 'tabiques',
