@@ -1,4 +1,10 @@
-import { LayoutDashboard, Building2, Layers3, Construction } from 'lucide-react';
+import {
+  LayoutDashboard,
+  Building2,
+  Layers3,
+  Construction,
+} from 'lucide-react';
+
 import logo from '../Logo LE2.png';
 
 interface SidebarProps {
@@ -39,28 +45,25 @@ export default function Sidebar({
 
   return (
     <aside className="bg-slate-900 text-white w-full md:w-[420px] md:min-h-screen">
-<div className="p-6 border-b border-slate-700">
+      <div className="p-6 border-b border-slate-700">
+        <img
+          src={logo}
+          alt="La Especialista"
+          className="w-full max-w-[260px] mx-auto mb-4"
+        />
 
-  <img
-    src={logo}
-    alt="La Especialista"
-    className="w-full mb-4"
-  />
-
-  <p className="text-sm text-slate-400 ext-center">
-    <span className="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 rounded-full font-semibold">
-      PRO v1.0
-    </span>
-  </div>
-
-</div>
-
+        <p className="text-sm text-slate-400 text-center">
+          Suite t-to-r from-blue-600 to-cyan-500 px-3 py-1 rounded-full font-semibold">
+            PRO v1.0
+          </span>
+        </div>
+      </div>
 
       <nav className="p-4">
-
         <p className="px-4 mb-3 text-xs uppercase tracking-wider text-slate-500">
-  Sistemas
-</p>
+          Sistemas
+        </p>
+
         {items.map((item) => {
           const Icon = item.icon;
 
@@ -69,33 +72,4 @@ export default function Sidebar({
               key={item.id}
               disabled={!item.enabled}
               onClick={() => setActiveModule(item.id)}
-              className={`w-full flex items-center justify-between rounded-lg px-4 py-3 mb-2 transition
-                ${
-                 activeModule === item.id
-  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg shadow-blue-900/40'
-  : 'bg-slate-800'
-                }
-                ${
-                  !item.enabled
-                    ? 'opacity-60 cursor-not-allowed'
-                    : 'hover:bg-slate-700'
-                }
-              `}
-            >
-              <div className="flex items-center gap-3">
-                <Icon size={18} />
-                {item.label}
-              </div>
-
-              {!item.enabled && (
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">
-                  Próximamente
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </nav>
-    </aside>
-  );
-}
+              className={`w-full flex items-center justify-between rounded-lg 
