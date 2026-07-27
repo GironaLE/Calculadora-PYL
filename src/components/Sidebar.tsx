@@ -24,11 +24,11 @@ export default function Sidebar({
       enabled: true,
     },
     {
-      id: 'techos-registrables',
-      label: 'Techos Registrables',
-      icon: Building2,
-      enabled: true,
-    },
+  id: 'techos-registrables',
+  label: 'Techos Registrables',
+  icon: Building2,
+  enabled: true,
+},
     {
       id: 'tabiques',
       label: 'Tabiques',
@@ -46,9 +46,11 @@ export default function Sidebar({
   return (
     <aside className="bg-slate-900 text-white w-full md:w-[420px] md:min-h-screen">
       <div className="p-6 border-b border-slate-700">
-    <div className="bg-red-500 text-white p-4">
-  PRUEBA SIDEBAR
-</div>
+    <img
+  src={logo}
+  alt="La Especialista"
+  className="w-full max-w-[260px] mx-auto mb-4"
+/>
 
         <p className="text-sm text-slate-400 text-center">
           Suite Profesional PYL
