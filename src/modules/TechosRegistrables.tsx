@@ -46,7 +46,6 @@ export default function TechosRegistrables() {
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-
       <h1 className="text-3xl font-bold mb-6">
         Techos Registrables
       </h1>
@@ -95,54 +94,127 @@ export default function TechosRegistrables() {
         <div className="bg-white rounded-2xl shadow-sm border p-6">
 
           <h2 className="text-xl font-bold mb-4">
-            Materiales
+            Ficha Técnica Oficial
           </h2>
 
-          <div className="space-y-2 text-sm">
+          <div className="overflow-hidden rounded-xl border">
+            <table className="w-full text-sm">
 
-            <div>Placas: {resultado.placas}</div>
+              <thead className="bg-slate-100">
+                <tr>
+                  <th className="text-left p-3">
+                    Material
+                  </th>
 
-            <div>
-              Perfil Primario:
-              {' '}
-              {resultado.primarioMl.toFixed(2)} ml
-            </div>
+                  <th className="text-right p-3">
+                    Cantidad
+                  </th>
+                </tr>
+              </thead>
 
-            {formato === '600x600' && (
-              <>
-                <div>
-                  Perfil Secundario 600:
-                  {' '}
-                  {resultado.secundario600Ml.toFixed(2)} ml
-                </div>
+              <tbody>
 
-                <div>
-                  Perfil Secundario 1200:
-                  {' '}
-                  {resultado.secundario1200Ml.toFixed(2)} ml
-                </div>
-              </>
-            )}
+                <tr className="border-t">
+                  <td className="p-3">
+                    Placas
+                  </td>
 
-            {formato === '1200x600' && (
-              <div>
-                Perfil Secundario:
-                {' '}
-                {resultado.secundario1200Ml.toFixed(2)} ml
-              </div>
-            )}
+                  <td className="p-3 text-right">
+                    {resultado.placas}
+                  </td>
+                </tr>
 
-            <div>
-              Angular:
-              {' '}
-              {resultado.angularMl.toFixed(2)} ml
-            </div>
+                <tr className="border-t">
+                  <td className="p-3">
+                    Perfil Primario
+                  </td>
 
-            <div>Penjants: {resultado.penjants}</div>
-            <div>Fijaciones: {resultado.fijaciones}</div>
-            <div>Varillas: {resultado.varillas}</div>
+                  <td className="p-3 text-right">
+                    {resultado.primarioMl.toFixed(2)} ml
+                  </td>
+                </tr>
 
+                {formato === '600x600' && (
+                  <>
+                    <tr className="border-t">
+                      <td className="p-3">
+                        Perfil Secundario 600
+                      </td>
+
+                      <td className="p-3 text-right">
+                        {resultado.secundario600Ml.toFixed(2)} ml
+                      </td>
+                    </tr>
+
+                    <tr className="border-t">
+                      <td className="p-3">
+                        Perfil Secundario 1200
+                      </td>
+
+                      <td className="p-3 text-right">
+                        {resultado.secundario1200Ml.toFixed(2)} ml
+                      </td>
+                    </tr>
+                  </>
+                )}
+
+                {formato === '1200x600' && (
+                  <tr className="border-t">
+                    <td className="p-3">
+                      Perfil Secundario 1200
+                    </td>
+
+                    <td className="p-3 text-right">
+                      {resultado.secundario1200Ml.toFixed(2)} ml
+                    </td>
+                  </tr>
+                )}
+
+                <tr className="border-t">
+                  <td className="p-3">
+                    Angular
+                  </td>
+
+                  <td className="p-3 text-right">
+                    {resultado.angularMl.toFixed(2)} ml
+                  </td>
+                </tr>
+
+                <tr className="border-t">
+                  <td className="p-3">
+                    Penjant Twist
+                  </td>
+
+                  <td className="p-3 text-right">
+                    {resultado.penjants}
+                  </td>
+                </tr>
+
+                <tr className="border-t">
+                  <td className="p-3">
+                    Fijaciones
+                  </td>
+
+                  <td className="p-3 text-right">
+                    {resultado.fijaciones}
+                  </td>
+                </tr>
+
+                <tr className="border-t">
+                  <td className="p-3">
+                    Varillas
+                  </td>
+
+                  <td className="p-3 text-right">
+                    {resultado.varillas}
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
           </div>
+
         </div>
 
       </div>
