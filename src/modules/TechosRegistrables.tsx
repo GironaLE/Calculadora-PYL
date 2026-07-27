@@ -47,7 +47,9 @@ export default function TechosRegistrables() {
   return (
     <div className="max-w-7xl mx-auto p-8">
       <h1 className="text-3xl font-bold mb-6">
-        Techos Registrables
+        <h1 className="text-3xl font-bold mb-6">
+  Calculadora de Techos Registrables T24
+</h1>
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -214,6 +216,45 @@ export default function TechosRegistrables() {
 
             </table>
           </div>
+          <h3 className="text-lg font-semibold mt-8 mb-4">
+  Unidades de Facturación
+</h3>
+
+<div>
+  Perfil Primario 3,7 m:
+  {' '}
+  {resultado.barrasPrimario}
+</div>
+
+{formato === '600x600' && (
+  <>
+    <div>
+      Perfil Secundario 600:
+      {' '}
+      {resultado.barrasSec600}
+    </div>
+
+    <div>
+      Perfil Secundario 1200:
+      {' '}
+      {resultado.barrasSec1200}
+    </div>
+  </>
+)}
+
+{formato === '1200x600' && (
+  <div>
+    Perfil Secundario 1200:
+    {' '}
+    {resultado.barrasSec1200}
+  </div>
+)}
+
+<div>
+  Angular 3 m:
+  {' '}
+  {resultado.barrasAngular}
+</div>
 
         </div>
 
