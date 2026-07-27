@@ -46,10 +46,14 @@ export default function Sidebar({
   return (
     <aside className="bg-slate-900 text-white w-full md:w-[420px] md:min-h-screen">
       <div className="p-6 border-b border-slate-700">
-        <img
-          src={logo}
-          alt="La Especialista"
-          className="w-full max-w-[260px] mx-auto mb-4
+        {logo}          alt="La Especialista"
+          className="w-full max-w-[260px] mx-auto mb-4"
+        />
+
+        <p className="text-sm text-slate-400 text-center">
+          Suite Profesional PYL
+        </p>
+
         <div className="mt-3 text-center">
           <span className="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 rounded-full font-semibold">
             PRO v1.0
