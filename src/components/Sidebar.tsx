@@ -51,7 +51,7 @@ export default function Sidebar({
   />
 
   <p className="text-sm text-slate-400 text-center">
-    Suite Profesional PYL
+    ESTO ES UNA PRUEBA
   </p>
 
   <div className="mt-3 text-center">
