@@ -1,3 +1,4 @@
+import TechosRegistrables from './modules/TechosRegistrables';
 import React, { useState } from 'react';
 
 import Header from './components/Header';
@@ -96,8 +97,8 @@ export default function App() {
         )}
 
         {activeModule === 'techos-registrables' && (
-          <ComingSoon title="Techos Registrables" />
-        )}
+  <TechosRegistrables />
+)}
 
         {activeModule === 'tabiques' && (
           <ComingSoon title="Tabiques" />
