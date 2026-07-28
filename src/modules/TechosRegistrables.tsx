@@ -56,7 +56,7 @@ export default function TechosRegistrables() {
     <div className="max-w-7xl mx-auto p-8">
 
       <h1 className="text-3xl font-bold mb-6">
-        Calculadora de Techos Registrables T24
+        PRUEBA PACO 123456
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
