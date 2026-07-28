@@ -1,7 +1,11 @@
 import { useMemo, useState } from 'react';
 
 export default function TechosRegistrables() {
-  const [superficie, setSuperficie] = useState(100);
+  const [largo, setLargo] = useState(10);
+  const [ancho, setAncho] = useState(10);
+
+  const superficie = largo * ancho;
+
   const [formato, setFormato] = useState('600x600');
 
   const resultado = useMemo(() => {
@@ -56,19 +60,44 @@ export default function TechosRegistrables() {
         <div className="bg-white rounded-2xl shadow-sm border p-6">
 
           <div className="mb-4">
-            <label className="block mb-2 font-medium">
-              Superficie (m²)
-            </label>
+  <label className="block mb-2 font-medium">
+    Largo (m)
+  </label>
 
-            <input
-              type="number"
-              value={superficie}
-              onChange={(e) =>
-                setSuperficie(Number(e.target.value))
-              }
-              className="w-full border rounded-lg px-3 py-2"
-            />
-          </div>
+  <input
+    type="number"
+    value={largo}
+    onChange={(e) =>
+      setLargo(Number(e.target.value))
+    }
+    className="w-full border rounded-lg px-3 py-2"
+  />
+</div>
+
+<div className="mb-4">
+  <label className="block mb-2 font-medium">
+    Ancho (m)
+  </label>
+
+  <input
+    type="number"
+    value={ancho}
+    onChange={(e) =>
+      setAncho(Number(e.target.value))
+    }
+    className="w-full border rounded-lg px-3 py-2"
+  />
+</div>
+
+<div className="mb-4 p-4 bg-slate-50 rounded-xl border">
+  <p className="text-sm text-slate-500">
+    Superficie calculada
+  </p>
+
+  <p className="text-2xl font-bold">
+    {superficie.toFixed(2)} m²
+  </p>
+</div>
 
           <div>
             <label className="block mb-2 font-medium">
