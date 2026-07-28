@@ -255,18 +255,13 @@ export default function TechosRegistrables() {
               </tbody>
 
             </table>
-          </div>
+</div>
 
-          <div className="mt-6">
+</div>
 
-            
-            </div>
+</div>
 
-          </div>
-
-        </div>
-
-      </div>
+</div>
 
     </div>
   );
