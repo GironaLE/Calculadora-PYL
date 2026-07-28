@@ -260,8 +260,6 @@ export default function TechosRegistrables() {
           <div className="mt-6">
 
             
-                </tbody>
-              </table>
             </div>
 
           </div>
