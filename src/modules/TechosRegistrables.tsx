@@ -4,13 +4,13 @@ export default function TechosRegistrables() {
   const [largo, setLargo] = useState(10);
   const [ancho, setAncho] = useState(10);
 
-  const superficieBase = largo * ancho;
-
-const superficie =
-  superficieBase * (1 + merma / 100);
-
   const [formato, setFormato] = useState('600x600');
   const [merma, setMerma] = useState(5);
+
+  const superficieBase = largo * ancho;
+
+  const superficie =
+    superficieBase * (1 + merma / 100);
 
   const resultado = useMemo(() => {
     if (formato === '600x600') {
@@ -54,96 +54,96 @@ const superficie =
 
   return (
     <div className="max-w-7xl mx-auto p-8">
+
       <h1 className="text-3xl font-bold mb-6">
-        <h1 className="text-3xl font-bold mb-6">
-  Calculadora de Techos Registrables T24
-</h1>
+        Calculadora de Techos Registrables T24
+      </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         <div className="bg-white rounded-2xl shadow-sm border p-6">
 
           <div className="mb-4">
-  <label className="block mb-2 font-medium">
-    Largo (m)
-  </label>
+            <label className="block mb-2 font-medium">
+              Largo (m)
+            </label>
 
-  <input
-    type="number"
-    value={largo}
-    onChange={(e) =>
-      setLargo(Number(e.target.value))
-    }
-    className="w-full border rounded-lg px-3 py-2"
-  />
-</div>
+            <input
+              type="number"
+              value={largo}
+              onChange={(e) =>
+                setLargo(Number(e.target.value))
+              }
+              className="w-full border rounded-lg px-3 py-2"
+            />
+          </div>
 
-<div className="mb-4">
-  <label className="block mb-2 font-medium">
-    Ancho (m)
-  </label>
+          <div className="mb-4">
+            <label className="block mb-2 font-medium">
+              Ancho (m)
+            </label>
 
-  <input
-    type="number"
-    value={ancho}
-    onChange={(e) =>
-      setAncho(Number(e.target.value))
-    }
-    className="w-full border rounded-lg px-3 py-2"
-  />
-</div>
+            <input
+              type="number"
+              value={ancho}
+              onChange={(e) =>
+                setAncho(Number(e.target.value))
+              }
+              className="w-full border rounded-lg px-3 py-2"
+            />
+          </div>
 
-<div className="mb-4 p-4 bg-slate-50 rounded-xl border">
-  <p className="text-sm text-slate-500">
-    Superficie calculada (con merma)
-  </p>
+          <div className="mb-4 p-4 bg-slate-50 rounded-xl border">
+            <p className="text-sm text-slate-500">
+              Superficie calculada (con merma)
+            </p>
 
-  <p className="text-2xl font-bold">
-    {superficie.toFixed(2)} m²
-  </p>
+            <p className="text-2xl font-bold">
+              {superficie.toFixed(2)} m²
+            </p>
 
-  <p className="text-sm text-slate-500 mt-2">
-    Base: {superficieBase.toFixed(2)} m²
-  </p>
-</div>
+            <p className="text-sm text-slate-500 mt-2">
+              Base: {superficieBase.toFixed(2)} m²
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 font-medium">
+              Formato
+            </label>
+
+            <select
+              value={formato}
+              onChange={(e) => setFormato(e.target.value)}
+              className="w-full border rounded-lg px-3 py-2"
+            >
+              <option value="600x600">
+                600 x 600
+              </option>
+
+              <option value="1200x600">
+                1200 x 600
+              </option>
+            </select>
+          </div>
 
           <div>
-  <label className="block mb-2 font-medium">
-    Formato
-  </label>
+            <label className="block mb-2 font-medium">
+              Merma
+            </label>
 
-  <select
-    value={formato}
-    onChange={(e) => setFormato(e.target.value)}
-    className="w-full border rounded-lg px-3 py-2"
-  >
-    <option value="600x600">
-      600 x 600
-    </option>
-
-    <option value="1200x600">
-      1200 x 600
-    </option>
-  </select>
-</div>
-
-<div className="mt-4">
-  <label className="block mb-2 font-medium">
-    Merma
-  </label>
-
-  <select
-    value={merma}
-    onChange={(e) =>
-      setMerma(Number(e.target.value))
-    }
-    className="w-full border rounded-lg px-3 py-2"
-  >
-    <option value={0}>0%</option>
-    <option value={5}>5%</option>
-    <option value={10}>10%</option>
-  </select>
-</div>
+            <select
+              value={merma}
+              onChange={(e) =>
+                setMerma(Number(e.target.value))
+              }
+              className="w-full border rounded-lg px-3 py-2"
+            >
+              <option value={0}>0%</option>
+              <option value={5}>5%</option>
+              <option value={10}>10%</option>
+            </select>
+          </div>
 
         </div>
 
@@ -171,211 +171,11 @@ const superficie =
               <tbody>
 
                 <tr className="border-t">
-                  <td className="p-3">
-                    Placas
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.placas}
-                  </td>
+                  <td className="p-3">Placas</td>
+                  <td className="p-3 text-right">{resultado.placas}</td>
                 </tr>
 
                 <tr className="border-t">
-                  <td className="p-3">
-                    Perfil Primario
-                  </td>
-
+                  <td className="p-3">Perfil Primario</td>
                   <td className="p-3 text-right">
-                    {resultado.primarioMl.toFixed(2)} ml
-                  </td>
-                </tr>
-
-                {formato === '600x600' && (
-                  <>
-                    <tr className="border-t">
-                      <td className="p-3">
-                        Perfil Secundario 600
-                      </td>
-
-                      <td className="p-3 text-right">
-                        {resultado.secundario600Ml.toFixed(2)} ml
-                      </td>
-                    </tr>
-
-                    <tr className="border-t">
-                      <td className="p-3">
-                        Perfil Secundario 1200
-                      </td>
-
-                      <td className="p-3 text-right">
-                        {resultado.secundario1200Ml.toFixed(2)} ml
-                      </td>
-                    </tr>
-                  </>
-                )}
-
-                {formato === '1200x600' && (
-                  <tr className="border-t">
-                    <td className="p-3">
-                      Perfil Secundario 1200
-                    </td>
-
-                    <td className="p-3 text-right">
-                      {resultado.secundario1200Ml.toFixed(2)} ml
-                    </td>
-                  </tr>
-                )}
-
-                <tr className="border-t">
-                  <td className="p-3">
-                    Angular
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.angularMl.toFixed(2)} ml
-                  </td>
-                </tr>
-
-                <tr className="border-t">
-                  <td className="p-3">
-                    Penjant Twist
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.penjants}
-                  </td>
-                </tr>
-
-                <tr className="border-t">
-                  <td className="p-3">
-                    Fijaciones
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.fijaciones}
-                  </td>
-                </tr>
-
-                <tr className="border-t">
-                  <td className="p-3">
-                    Varillas
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.varillas}
-                  </td>
-                </tr>
-
-              </tbody>
-
-            </table>
-          </div>
-          <div className="mt-6">
-  <h3 className="text-lg font-semibold mb-4">
-    Unidades de Facturación
-  </h3>
-
-  <div className="overflow-hidden rounded-xl border">
-    <table className="w-full text-sm">
-
-      <tbody>
-
-        <tr className="border-t">
-          <td className="p-3">
-            Perfil Primario 3,7 m
-          </td>
-
-          <td className="p-3 text-right">
-            {resultado.barrasPrimario}
-          </td>
-        </tr>
-
-        {formato === '600x600' && (
-          <>
-            <tr className="border-t">
-              <td className="p-3">
-                Perfil Secundario 600
-              </td>
-
-              <td className="p-3 text-right">
-                {resultado.barrasSec600}
-              </td>
-            </tr>
-
-            <tr className="border-t">
-              <td className="p-3">
-                Perfil Secundario 1200
-              </td>
-
-              <td className="p-3 text-right">
-                {resultado.barrasSec1200}
-              </td>
-            </tr>
-          </>
-        )}
-
-        {formato === '1200x600' && (
-          <tr className="border-t">
-            <td className="p-3">
-              Perfil Secundario 1200
-            </td>
-
-            <td className="p-3 text-right">
-              {resultado.barrasSec1200}
-            </td>
-          </tr>
-        )}
-
-        <tr className="border-t">
-          <td className="p-3">
-            Angular 3 m
-          </td>
-
-          <td className="p-3 text-right">
-            {resultado.barrasAngular}
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-  </div>
-</div>
-
-{formato === '600x600' && (
-  <>
-    <div>
-      Perfil Secundario 600:
-      {' '}
-      {resultado.barrasSec600}
-    </div>
-
-    <div>
-      Perfil Secundario 1200:
-      {' '}
-      {resultado.barrasSec1200}
-    </div>
-  </>
-)}
-
-{formato === '1200x600' && (
-  <div>
-    Perfil Secundario 1200:
-    {' '}
-    {resultado.barrasSec1200}
-  </div>
-)}
-
-<div>
-  Angular 3 m:
-  {' '}
-  {resultado.barrasAngular}
-</div>
-
-        </div>
-
-      </div>
-
-    </div>
-  );
-}
+      
