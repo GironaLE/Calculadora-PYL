@@ -4,9 +4,13 @@ export default function TechosRegistrables() {
   const [largo, setLargo] = useState(10);
   const [ancho, setAncho] = useState(10);
 
-  const superficie = largo * ancho;
+  const superficieBase = largo * ancho;
+
+const superficie =
+  superficieBase * (1 + merma / 100);
 
   const [formato, setFormato] = useState('600x600');
+  const [merma, setMerma] = useState(5);
 
   const resultado = useMemo(() => {
     if (formato === '600x600') {
@@ -91,33 +95,55 @@ export default function TechosRegistrables() {
 
 <div className="mb-4 p-4 bg-slate-50 rounded-xl border">
   <p className="text-sm text-slate-500">
-    Superficie calculada
+    Superficie calculada (con merma)
   </p>
 
   <p className="text-2xl font-bold">
     {superficie.toFixed(2)} m²
   </p>
+
+  <p className="text-sm text-slate-500 mt-2">
+    Base: {superficieBase.toFixed(2)} m²
+  </p>
 </div>
 
           <div>
-            <label className="block mb-2 font-medium">
-              Formato
-            </label>
+  <label className="block mb-2 font-medium">
+    Formato
+  </label>
 
-            <select
-              value={formato}
-              onChange={(e) => setFormato(e.target.value)}
-              className="w-full border rounded-lg px-3 py-2"
-            >
-              <option value="600x600">
-                600 x 600
-              </option>
+  <select
+    value={formato}
+    onChange={(e) => setFormato(e.target.value)}
+    className="w-full border rounded-lg px-3 py-2"
+  >
+    <option value="600x600">
+      600 x 600
+    </option>
 
-              <option value="1200x600">
-                1200 x 600
-              </option>
-            </select>
-          </div>
+    <option value="1200x600">
+      1200 x 600
+    </option>
+  </select>
+</div>
+
+<div className="mt-4">
+  <label className="block mb-2 font-medium">
+    Merma
+  </label>
+
+  <select
+    value={merma}
+    onChange={(e) =>
+      setMerma(Number(e.target.value))
+    }
+    className="w-full border rounded-lg px-3 py-2"
+  >
+    <option value={0}>0%</option>
+    <option value={5}>5%</option>
+    <option value={10}>10%</option>
+  </select>
+</div>
 
         </div>
 
