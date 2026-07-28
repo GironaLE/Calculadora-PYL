@@ -243,13 +243,7 @@ export default function TechosRegistrables() {
                     {resultado.penjants}
                   </td>
                 </tr>
-
-                <tr className="border-t">
-                  <td className="p-3">Fijaciones</td>
-                  <td className="p-3 text-right">
-                    {resultado.fijaciones}
-                  </td>
-                </tr>
+                
 
                 <tr className="border-t">
                   <td className="p-3">Varillas</td>
