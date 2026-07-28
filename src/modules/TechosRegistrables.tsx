@@ -199,7 +199,7 @@ export default function TechosRegistrables() {
                 <tr className="border-t">
                   <td className="p-3">Perfil Primario</td>
                   <td className="p-3 text-right">
-                    {resultado.primarioMl.toFixed(2)} ml
+                    {resultado.barrasPrimario}
                   </td>
                 </tr>
 
@@ -208,14 +208,14 @@ export default function TechosRegistrables() {
                     <tr className="border-t">
                       <td className="p-3">Perfil Secundario 600</td>
                       <td className="p-3 text-right">
-                        {resultado.secundario600Ml.toFixed(2)} ml
+                        {resultado.barrasSec600}
                       </td>
                     </tr>
 
                     <tr className="border-t">
                       <td className="p-3">Perfil Secundario 1200</td>
                       <td className="p-3 text-right">
-                        {resultado.secundario1200Ml.toFixed(2)} ml
+                        {resultado.barrasSec1200}
                       </td>
                     </tr>
                   </>
@@ -225,7 +225,7 @@ export default function TechosRegistrables() {
                   <tr className="border-t">
                     <td className="p-3">Perfil Secundario 1200</td>
                     <td className="p-3 text-right">
-                      {resultado.secundario1200Ml.toFixed(2)} ml
+                      {resultado.barrasSec1200}
                     </td>
                   </tr>
                 )}
@@ -233,7 +233,7 @@ export default function TechosRegistrables() {
                 <tr className="border-t">
                   <td className="p-3">Angular</td>
                   <td className="p-3 text-right">
-                    {resultado.angularMl.toFixed(2)} ml
+                    {resultado.barrasAngular}
                   </td>
                 </tr>
 
@@ -259,70 +259,7 @@ export default function TechosRegistrables() {
 
           <div className="mt-6">
 
-            <h3 className="text-lg font-semibold mb-4">
-              Unidades de Facturación
-            </h3>
-
-            <div className="overflow-hidden rounded-xl border">
-              <table className="w-full text-sm">
-                <tbody>
-
-                  <tr className="border-t">
-                    <td className="p-3">
-                      Perfil Primario 3,7 m
-                    </td>
-
-                    <td className="p-3 text-right">
-                      {resultado.barrasPrimario}
-                    </td>
-                  </tr>
-
-                  {formato === '600x600' && (
-                    <>
-                      <tr className="border-t">
-                        <td className="p-3">
-                          Perfil Secundario 600
-                        </td>
-
-                        <td className="p-3 text-right">
-                          {resultado.barrasSec600}
-                        </td>
-                      </tr>
-
-                      <tr className="border-t">
-                        <td className="p-3">
-                          Perfil Secundario 1200
-                        </td>
-
-                        <td className="p-3 text-right">
-                          {resultado.barrasSec1200}
-                        </td>
-                      </tr>
-                    </>
-                  )}
-
-                  {formato === '1200x600' && (
-                    <tr className="border-t">
-                      <td className="p-3">
-                        Perfil Secundario 1200
-                      </td>
-
-                      <td className="p-3 text-right">
-                        {resultado.barrasSec1200}
-                      </td>
-                    </tr>
-                  )}
-
-                  <tr className="border-t">
-                    <td className="p-3">
-                      Angular 3 m
-                    </td>
-
-                    <td className="p-3 text-right">
-                      {resultado.barrasAngular}
-                    </td>
-                  </tr>
-
+            
                 </tbody>
               </table>
             </div>
