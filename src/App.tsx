@@ -1,3 +1,4 @@
+import Tabiques from './modules/Tabiques';
 import TechosRegistrables from './modules/TechosRegistrables';
 import React, { useState } from 'react';
 
@@ -101,8 +102,8 @@ export default function App() {
 )}
 
         {activeModule === 'tabiques' && (
-          <ComingSoon title="Tabiques" />
-        )}
+  <Tabiques />
+)}
 
         {activeModule === 'trasdosados' && (
           <ComingSoon title="Trasdosados" />
