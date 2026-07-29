@@ -141,11 +141,14 @@ const [superficieManual, setSuperficieManual] =
     </option>
   </select>
 </div>
-              Sistema
-            </label>
 
-            <select
-              value={sistema}
+<div className="mb-4">
+  <label className="block mb-2 font-medium">
+    Sistema
+  </label>
+
+  <select
+    value={sistema}
               onChange={(e) =>
                 setSistema(e.target.value)
               }
