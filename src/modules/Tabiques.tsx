@@ -43,10 +43,11 @@ const [superficieManual, setSuperficieManual] =
       canalesMl / 3
     );
 
-    const montantes = Math.ceil(
-      longitud /
-        (es400 ? 0.4 : 0.6)
-    ) + 1;
+    const montantes =
+  Math.ceil(
+    longitud /
+      (es400 ? 0.4 : 0.6)
+  );
 
     const bandaMl = superficie * 1.2;
 
