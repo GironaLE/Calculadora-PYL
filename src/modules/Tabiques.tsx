@@ -6,11 +6,19 @@ export default function Tabiques() {
 
   const [longitud, setLongitud] = useState(20);
   const [altura, setAltura] = useState(3);
+  const [modoCalculo, setModoCalculo] =
+  useState('dimensiones');
+
+const [superficieManual, setSuperficieManual] =
+  useState(60);
 
   const [alturaPlaca, setAlturaPlaca] = useState(3);
   const [merma, setMerma] = useState(5);
 
-  const superficieBase = longitud * altura;
+  const superficieBase =
+  modoCalculo === 'dimensiones'
+    ? longitud * altura
+    : superficieManual;
 
   const superficie =
     superficieBase * (1 + merma / 100);
@@ -114,6 +122,25 @@ export default function Tabiques() {
 
           <div className="mb-4">
             <label className="block mb-2 font-medium">
+    Método de cálculo
+  </label>
+
+  <select
+    value={modoCalculo}
+    onChange={(e) =>
+      setModoCalculo(e.target.value)
+    }
+    className="w-full border rounded-lg px-3 py-2"
+  >
+    <option value="dimensiones">
+      Longitud × Altura
+    </option>
+
+    <option value="superficie">
+      Superficie total
+    </option>
+  </select>
+</div>
               Sistema
             </label>
 
@@ -156,39 +183,56 @@ export default function Tabiques() {
             </select>
           </div>
 
-          <div className="mb-4">
-            <label className="block mb-2 font-medium">
-              Longitud del tabique (m)
-            </label>
+          {modoCalculo === 'dimensiones' ? (
+  <>
+    <div className="mb-4">
+      <label className="block mb-2 font-medium">
+        Longitud del tabique (m)
+      </label>
 
-            <input
-              type="number"
-              value={longitud}
-              onChange={(e) =>
-                setLongitud(
-                  Number(e.target.value)
-                )
-              }
-              className="w-full border rounded-lg px-3 py-2"
-            />
-          </div>
+      <input
+        type="number"
+        value={longitud}
+        onChange={(e) =>
+          setLongitud(Number(e.target.value))
+        }
+        className="w-full border rounded-lg px-3 py-2"
+      />
+    </div>
 
-          <div className="mb-4">
-            <label className="block mb-2 font-medium">
-              Altura del tabique (m)
-            </label>
+    <div className="mb-4">
+      <label className="block mb-2 font-medium">
+        Altura del tabique (m)
+      </label>
 
-            <input
-              type="number"
-              value={altura}
-              onChange={(e) =>
-                setAltura(
-                  Number(e.target.value)
-                )
-              }
-              className="w-full border rounded-lg px-3 py-2"
-            />
-          </div>
+      <input
+        type="number"
+        value={altura}
+        onChange={(e) =>
+          setAltura(Number(e.target.value))
+        }
+        className="w-full border rounded-lg px-3 py-2"
+      />
+    </div>
+  </>
+) : (
+  <div className="mb-4">
+    <label className="block mb-2 font-medium">
+      Superficie (m²)
+    </label>
+
+    <input
+      type="number"
+      value={superficieManual}
+      onChange={(e) =>
+        setSuperficieManual(
+          Number(e.target.value)
+        )
+      }
+      className="w-full border rounded-lg px-3 py-2"
+    />
+  </div>
+)}
 
           <div className="mb-4">
             <label className="block mb-2 font-medium">
