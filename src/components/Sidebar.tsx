@@ -33,7 +33,7 @@ export default function Sidebar({
       id: 'tabiques',
       label: 'Tabiques',
       icon: Layers3,
-      enabled: false,
+      enabled: true,
     },
     {
       id: 'trasdosados',
