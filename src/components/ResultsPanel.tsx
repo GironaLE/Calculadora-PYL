@@ -43,9 +43,9 @@ export default function ResultsPanel({
     switch (name) {
       case 'Placa PYL':
         return <Layers className="w-4 h-4 text-blue-600" />;
-      case 'Maestra F47':
+      case 'Maestra':
         return <Ruler className="w-4 h-4 text-slate-500" />;
-      case 'Perfil Clip':
+      case 'Perfil Perimetral':
         return <Compass className="w-4 h-4 text-indigo-500" />;
       case 'Tornillo TN 25':
         return <Wrench className="w-4 h-4 text-gray-500" />;
@@ -57,7 +57,7 @@ export default function ResultsPanel({
         return <Pin className="w-4 h-4 text-amber-500" style={{ transform: 'rotate(45deg)' }} />;
       case 'Conector de Maestra':
         return <Link className="w-4 h-4 text-sky-500" />;
-      case 'Caballete F47':
+      case 'Caballete':
         return <Hammer className="w-4 h-4 text-emerald-600" />;
       case 'Pasta de juntas':
         return <Droplet className="w-4 h-4 text-teal-500" />;
