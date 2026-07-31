@@ -281,14 +281,14 @@ export default function ResultsPanel({
                     <span className="text-blue-600 font-bold block mb-1">🧮 Detalle de Multiplicaciones Directas</span>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-[11px]">
                       <div>• Placa PYL: <span className="text-slate-900 font-bold">{area}</span> × 1.00 = {getMatQtyReal('Placa PYL')} m²</div>
-                      <div>• Maestra F47: <span className="text-slate-900 font-bold">{area}</span> × 3.20 = {getMatQtyReal('Maestra F47')} ml</div>
-                      <div>• Perfil Clip: <span className="text-slate-900 font-bold">{area}</span> × 0.40 = {getMatQtyReal('Perfil Clip')} ml</div>
+                      <div>• Maestra: <span className="text-slate-900 font-bold">{area}</span> × 3.20 = {getMatQtyReal('Maestra F47')} ml</div>
+                      <div>• Perfil Perimetral: <span className="text-slate-900 font-bold">{area}</span> × 0.40 = {getMatQtyReal('Perfil Clip')} ml</div>
                       <div>• Tornillo TN 25: <span className="text-slate-900 font-bold">{area}</span> × 17 = {getMatQtyReal('Tornillo TN 25')} uds</div>
                       <div>• Horquilla / Penjant: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Horquilla / Penjant')} uds</div>
                       <div>• Fijaciones: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Fijaciones')} uds</div>
                       <div>• Varilla 1 m: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Varilla 1 m')} uds</div>
                       <div>• Conector de Maestra: <span className="text-slate-900 font-bold">{area}</span> × 0.60 = {getMatQtyReal('Conector de Maestra')} uds</div>
-                      <div>• Caballete F47: <span className="text-slate-900 font-bold">{area}</span> × 2.30 = {getMatQtyReal('Caballete F47')} uds</div>
+                      <div>• Caballete: <span className="text-slate-900 font-bold">{area}</span> × 2.30 = {getMatQtyReal('Caballete F47')} uds</div>
                       <div>• Pasta de juntas: <span className="text-slate-900 font-bold">{area}</span> × 0.40 = {getMatQtyReal('Pasta de juntas')} kg</div>
                       <div>• Cinta: <span className="text-slate-900 font-bold">{area}</span> × 1.20 = {getMatQtyReal('Cinta')} ml</div>
                     </div>
