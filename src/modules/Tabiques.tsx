@@ -13,6 +13,7 @@ const [superficieManual, setSuperficieManual] =
   useState(60);
 
   const [alturaPlaca, setAlturaPlaca] = useState(3);
+  const [espesorPlaca, setEspesorPlaca] = useState('12.5');
   const [merma, setMerma] = useState(5);
 
   const superficieBase =
@@ -243,6 +244,27 @@ const montantes = Math.ceil(
             <label className="block mb-2 font-medium">
               Altura de placa
             </label>
+            <div className="mb-4">
+  <label className="block mb-2 font-medium">
+    Espesor de placa
+  </label>
+
+  <select
+    value={espesorPlaca}
+    onChange={(e) =>
+      setEspesorPlaca(e.target.value)
+    }
+    className="w-full border rounded-lg px-3 py-2"
+  >
+    <option value="12.5">
+      12,5 mm
+    </option>
+
+    <option value="15">
+      15 mm
+    </option>
+  </select>
+</div>
 
             <select
               value={alturaPlaca}
@@ -342,7 +364,7 @@ const montantes = Math.ceil(
 
                 <tr className="border-t">
                   <td className="p-3">
-                    Placas 12,5 mm
+                    Placa Knauf Standard {espesorPlaca} mm
                   </td>
 
                   <td className="p-3 text-right">
