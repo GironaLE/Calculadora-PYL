@@ -49,11 +49,11 @@ export function calcularMateriales(
   const cantRealPlaca = superficie * MATERIAL_COEFFICIENTS.placa * factorDesperdicio;
   const udsComercialesPlaca = Math.ceil(cantRealPlaca / placaArea);
 
-  // 2. Maestra F47
+  // 2. Maestra
   const cantRealMaestra = superficie * MATERIAL_COEFFICIENTS.maestraF47 * factorDesperdicio;
   const udsComercialesMaestra = Math.ceil(cantRealMaestra / 3);
 
-  // 3. Perfil Clip
+  // 3. Perfil Perimetral
   const cantRealClip = superficie * MATERIAL_COEFFICIENTS.perfilClip * factorDesperdicio;
   const udsComercialesClip = Math.ceil(cantRealClip / 3);
 
@@ -73,7 +73,7 @@ export function calcularMateriales(
   const cantRealConector = superficie * MATERIAL_COEFFICIENTS.conector * factorDesperdicio;
   const udsComercialesConector = Math.ceil(cantRealConector);
 
-  // 9. Caballete F47
+  // 9. Caballete
   const cantRealCaballete = superficie * MATERIAL_COEFFICIENTS.caballete * factorDesperdicio;
   const udsComercialesCaballete = Math.ceil(cantRealCaballete);
 
@@ -94,14 +94,14 @@ export function calcularMateriales(
       unidadesComerciales: udsComercialesPlaca
     },
     {
-      nombre: 'Maestra F47',
+      nombre: 'Maestra',
       cantidadReal: Number(cantRealMaestra.toFixed(2)),
       unidad: 'ml',
       formatoComercial: 'Barra 3 m',
       unidadesComerciales: udsComercialesMaestra
     },
     {
-      nombre: 'Perfil Clip',
+      nombre: 'Perfil Perimetral',
       cantidadReal: Number(cantRealClip.toFixed(2)),
       unidad: 'ml',
       formatoComercial: 'Barra 3 m',
@@ -136,7 +136,7 @@ export function calcularMateriales(
       unidadesComerciales: udsComercialesConector
     },
     {
-      nombre: 'Caballete F47',
+      nombre: 'Caballete',
       cantidadReal: Math.round(cantRealCaballete),
       unidad: 'uds',
       formatoComercial: 'Unidad',
