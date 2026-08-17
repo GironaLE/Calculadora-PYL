@@ -31,13 +31,13 @@ export function generateProfessionalPDF(inputs: CeilingInputs, result: Calculati
   };
 
   const placa = getMat('Placa PYL');
-  const maestra = getMat('Maestra F47');
-  const clip = getMat('Perfil Clip');
+  const maestra = getMat('Maestra');
+  const clip = getMat('Perfil Perimetral');
   const tornillo = getMat('Tornillo TN 25');
   const horquilla = getMat('Horquilla / Penjant');
   const varilla = getMat('Varilla 1 m');
   const conector = getMat('Conector de Maestra');
-  const caballete = getMat('Caballete F47');
+  const caballete = getMat('Caballete');
   const pasta = getMat('Pasta de juntas');
   const cinta = getMat('Cinta');
 
