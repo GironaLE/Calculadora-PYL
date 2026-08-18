@@ -77,13 +77,6 @@ const cajasLargos = Math.ceil(
   tornillosLargos / 1000
 );
 
-    const pastaAgarreKg =
-      superficie * (esW112 ? 0.2 : 0.1);
-
-    const sacosAgarre = Math.ceil(
-      pastaAgarreKg / 25
-    );
-
     const pastaJuntasKg =
       superficie * (esW112 ? 1 : 0.6);
 
@@ -105,10 +98,9 @@ const cajasLargos = Math.ceil(
       rollosBanda,
       tornillos25,
       tornillosLargos,
+      sacosJuntas,
       cajas25,
       cajasLargos,
-      sacosAgarre,
-      sacosJuntas,
       rollosCinta,
     };
   }, [
@@ -431,16 +423,6 @@ const cajasLargos = Math.ceil(
     </td>
   </tr>
 )}
-
-                <tr className="border-t">
-                  <td className="p-3">
-                    Pasta de agarre
-                  </td>
-
-                  <td className="p-3 text-right">
-                    {resultado.sacosAgarre}
-                  </td>
-                </tr>
 
                 <tr className="border-t">
                   <td className="p-3">
