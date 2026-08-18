@@ -58,7 +58,7 @@ const montantes = Math.ceil(
     );
 
     const tornillos25 = Math.ceil(
-  superficie * (es400 ? 13 : 11)
+  superficie * 13
 );
 
 let tornillosLargos = 0;
