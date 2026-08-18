@@ -57,16 +57,25 @@ const montantes = Math.ceil(
       bandaMl / 30
     );
 
-    const tornillos = Math.ceil(
-      superficie *
-        (esW112
-          ? es400
-            ? 53
-            : 42
-          : es400
-          ? 37
-          : 29)
-    );
+    const tornillos25 = Math.ceil(
+  superficie * (es400 ? 13 : 11)
+);
+
+let tornillosLargos = 0;
+
+if (esW112) {
+  tornillosLargos = Math.ceil(
+    superficie * (es400 ? 29 : 25)
+  );
+}
+
+const cajas25 = Math.ceil(
+  tornillos25 / 1000
+);
+
+const cajasLargos = Math.ceil(
+  tornillosLargos / 1000
+);
 
     const cajasTornillos = Math.ceil(
       tornillos / 1000
@@ -98,8 +107,10 @@ const montantes = Math.ceil(
       canales,
       montantes,
       rollosBanda,
-      tornillos,
-      cajasTornillos,
+      tornillos25,
+      tornillosLargos,
+      cajas25,
+      cajasLargos,
       sacosAgarre,
       sacosJuntas,
       rollosCinta,
@@ -403,14 +414,27 @@ const montantes = Math.ceil(
                 </tr>
 
                 <tr className="border-t">
-                  <td className="p-3">
-                    Tornillos TN 25
-                  </td>
+  <td className="p-3">
+    Tornillos TN 25
+  </td>
 
-                  <td className="p-3 text-right">
-                    {resultado.cajasTornillos}
-                  </td>
-                </tr>
+  <td className="p-3 text-right">
+    {resultado.cajas25}
+  </td>
+</tr>
+                {sistema === 'W112' && (
+  <tr className="border-t">
+    <td className="p-3">
+      {espesorPlaca === '15'
+        ? 'Tornillos TN 45'
+        : 'Tornillos TN 35'}
+    </td>
+
+    <td className="p-3 text-right">
+      {resultado.cajasLargos}
+    </td>
+  </tr>
+)}
 
                 <tr className="border-t">
                   <td className="p-3">
