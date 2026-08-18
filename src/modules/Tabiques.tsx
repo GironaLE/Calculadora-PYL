@@ -77,10 +77,6 @@ const cajasLargos = Math.ceil(
   tornillosLargos / 1000
 );
 
-    const cajasTornillos = Math.ceil(
-      tornillos / 1000
-    );
-
     const pastaAgarreKg =
       superficie * (esW112 ? 0.2 : 0.1);
 
