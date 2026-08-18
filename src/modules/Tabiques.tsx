@@ -65,7 +65,7 @@ let tornillosLargos = 0;
 
 if (esW112) {
   tornillosLargos = Math.ceil(
-    superficie * (es400 ? 29 : 25)
+    superficie * (es400 ? 37 : 29)
   );
 }
 
