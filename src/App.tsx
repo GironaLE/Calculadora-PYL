@@ -106,8 +106,8 @@ export default function App() {
 )}
 
         {activeModule === 'trasdosados' && (
-          <ComingSoon title="Trasdosados" />
-        )}
+  <Trasdosados />
+)}
 
       </div>
     </div>
