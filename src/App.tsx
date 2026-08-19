@@ -1,3 +1,4 @@
+import Trasdosados from './modules/Trasdosados';
 import Tabiques from './modules/Tabiques';
 import TechosRegistrables from './modules/TechosRegistrables';
 import React, { useState } from 'react';
