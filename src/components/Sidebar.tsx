@@ -36,11 +36,11 @@ export default function Sidebar({
       enabled: true,
     },
     {
-      id: 'trasdosados',
-      label: 'Trasdosados',
-      icon: Construction,
-      enabled: false,
-    },
+  id: 'trasdosados',
+  label: 'Trasdosados',
+  icon: ...,
+  enabled: true,
+},
   ];
 
   return (
