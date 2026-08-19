@@ -38,7 +38,7 @@ export default function Sidebar({
     {
   id: 'trasdosados',
   label: 'Trasdosados',
-  icon: ...,
+  icon: Construction,
   enabled: true,
 },
   ];
