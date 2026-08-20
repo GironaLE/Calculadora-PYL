@@ -77,7 +77,23 @@ export default function App() {
 
             </main>
 
-            <footer className="bg-white border-t border-slate-200 py-6 mt-12 no-print">
+            
+          </>
+        )}
+
+        {activeModule === 'techos-registrables' && (
+  <TechosRegistrables />
+)}
+
+        {activeModule === 'tabiques' && (
+  <Tabiques />
+)}
+
+        {activeModule === 'trasdosados' && (
+  <Trasdosados />
+)}
+        
+<footer className="bg-white border-t border-slate-200 py-6 mt-0 no-print">
               <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400 gap-4">
                 <p>
                   © {new Date().getFullYear()} La Especialista.
@@ -95,21 +111,6 @@ export default function App() {
                 </a>
               </div>
             </footer>
-          </>
-        )}
-
-        {activeModule === 'techos-registrables' && (
-  <TechosRegistrables />
-)}
-
-        {activeModule === 'tabiques' && (
-  <Tabiques />
-)}
-
-        {activeModule === 'trasdosados' && (
-  <Trasdosados />
-)}
-
       </div>
     </div>
   );
