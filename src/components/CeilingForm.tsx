@@ -64,7 +64,7 @@ export default function CeilingForm({
           <div>
             <div className="flex justify-between items-center mb-1.5">
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                Superficie Total <span className="text-red-500">*</span>
+                Superficie Total 
               </label>
             </div>
             
