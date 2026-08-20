@@ -93,7 +93,7 @@ export default function CeilingForm({
             <div>
               <div className="flex justify-between items-center mb-1.5">
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                  Largo <span className="text-red-500">*</span>
+                  Largo 
                 </label>
                 <span className="text-[10px] font-mono text-slate-400">Unidad: Metros</span>
               </div>
@@ -122,7 +122,7 @@ export default function CeilingForm({
             <div>
               <div className="flex justify-between items-center mb-1.5">
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                  Ancho <span className="text-red-500">*</span>
+                  Ancho 
                 </label>
                 <span className="text-[10px] font-mono text-slate-400">Unidad: Metros</span>
               </div>
@@ -191,7 +191,7 @@ export default function CeilingForm({
         {/* Medida de placa selector */}
         <div>
           <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-            Medida de placa PYL (Ancho x Largo) <span className="text-red-500">*</span>
+            Medida de placa PYL (Ancho x Largo) 
           </label>
           <select
             value={inputs.medidaPlaca}
