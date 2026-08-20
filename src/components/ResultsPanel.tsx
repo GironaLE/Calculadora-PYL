@@ -31,8 +31,6 @@ export default function ResultsPanel({
   onReset 
 }: ResultsPanelProps) {
 
-  const [copied, setCopied] = useState(false);
-
   const area = result?.superficie || 0;
   const perimetro = result?.perimetro || 0;
 
@@ -195,46 +193,20 @@ export default function ResultsPanel({
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-sans text-xs">
-              {result?.materiales.map((row, idx) => {
-                const isTechnical = activeTab === 'tecnico';
-                const showDecimal = row.unidad === 'ml' || row.unidad === 'kg' || row.unidad === 'm²';
+  {result?.materiales.map((row, idx) => (
+    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+      <td className="py-3 px-4 sm:px-6">
+        <span className="font-semibold text-slate-800">
+          {row.nombre}
+        </span>
+      </td>
 
-                return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      className="space-y-6"
-    >
-      {/* 2. Tabla de materiales */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
-          <div>
-            <h3 className="font-display font-extrabold text-slate-900 text-sm flex items-center gap-2">
-              <span className="w-1.5 h-4 rounded-full bg-blue-600" />
-              Ficha Técnica Oficial
-            </h3>
-          </div>
-        </div>
-
-        {/* Table rendering based on tab */}
-        <div className="overflow-x-auto no-print">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/50">
-                <th className="py-3 px-4 sm:px-6">
-  Material
-</th>
-
-<th className="py-3 px-4 text-right">
-  Cantidad
-</th>
-
-              </tr>
-                );
-              })}
-            </tbody>
+      <td className="py-3 px-4 text-right font-bold text-blue-600">
+        {row.unidadesComerciales.toLocaleString('es-ES')}
+      </td>
+    </tr>
+  ))}
+</tbody>
           </table>
         </div>
 
@@ -284,10 +256,7 @@ export default function ResultsPanel({
             <thead>
               <tr className="bg-slate-100 font-bold text-left">
                 <th className="p-2">Material</th>
-                <th className="p-2 text-center">Cantidad</th>
-                <th className="p-2 text-center">Unidad</th>
-                <th className="p-2">Formato</th>
-                <th className="p-2 text-right">Compra</th>
+<th className="p-2 text-right">Cantidad</th>
               </tr>
             </thead>
             <tbody>
