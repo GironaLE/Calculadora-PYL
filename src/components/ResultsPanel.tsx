@@ -32,7 +32,6 @@ export default function ResultsPanel({
 }: ResultsPanelProps) {
 
   const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState<'tecnico' | 'compra'>('tecnico');
 
   const area = result?.superficie || 0;
   const perimetro = result?.perimetro || 0;
@@ -201,30 +200,38 @@ export default function ResultsPanel({
                 const showDecimal = row.unidad === 'ml' || row.unidad === 'kg' || row.unidad === 'm²';
 
                 return (
-                  <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="py-3 px-4 sm:px-6 flex items-center space-x-2.5 min-w-[200px]">
-                      <span className="text-slate-400 font-mono text-[10px] w-4">{idx + 1}.</span>
-                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center shadow-xs">
-                        {getMaterialIcon(row.nombre)}
-                      </div>
-                      <span className="font-semibold text-slate-800">{row.nombre}</span>
-                    </td>
-                    <td className="py-3 px-4 text-center font-mono font-bold text-slate-900">
-                      {showDecimal 
-                        ? row.cantidadReal.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) 
-                        : Math.round(row.cantidadReal).toLocaleString('es-ES')
-                      }
-                    </td>
-                    <td className="py-3 px-4 text-center text-slate-500 font-medium">
-                      {row.unidad}
-                    </td>
-                    <td className="py-3 px-4 text-left text-slate-500 hidden sm:table-cell font-mono text-[11px]">
-                      {row.formatoComercial}
-                    </td>
-                    <td className={`py-3 px-4 text-right font-mono font-extrabold ${isTechnical ? 'text-blue-600 bg-blue-50/5' : 'text-emerald-600 bg-emerald-50/5'}`}>
-                      {row.unidadesComerciales.toLocaleString('es-ES')}
-                    </td>
-                  </tr>
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="space-y-6"
+    >
+      {/* 2. Tabla de materiales */}
+      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
+          <div>
+            <h3 className="font-display font-extrabold text-slate-900 text-sm flex items-center gap-2">
+              <span className="w-1.5 h-4 rounded-full bg-blue-600" />
+              Ficha Técnica Oficial
+            </h3>
+          </div>
+        </div>
+
+        {/* Table rendering based on tab */}
+        <div className="overflow-x-auto no-print">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/50">
+                <th className="py-3 px-4 sm:px-6">
+  Material
+</th>
+
+<th className="py-3 px-4 text-right">
+  Cantidad
+</th>
+
+              </tr>
                 );
               })}
             </tbody>
