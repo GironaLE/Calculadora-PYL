@@ -241,13 +241,7 @@ export default function ResultsPanel({
 
       {/* 5. Horizontal buttons bar under results */}
       <div className="flex flex-col md:flex-row items-center gap-3 w-full md:justify-end no-print pt-2">
-        <button 
-          onClick={handleCopyResults}
-          className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-blue-100"
-        >
-          <Share2 className="w-3.5 h-3.5" />
-          <span>{copied ? '¡Copiado!' : 'Copiar resultados'}</span>
-        </button>
+        
       </div>
 
       {/* 6. Exclusive Print Layout */}
