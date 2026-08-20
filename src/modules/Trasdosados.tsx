@@ -99,10 +99,6 @@ const rollosBanda = Math.ceil(
   bandaMl / 30
 );
 
-const fijaciones = Math.ceil(
-  superficie * 1.6
-);
-
 const tn25 = Math.ceil(
   superficie * 14
 );
@@ -130,7 +126,6 @@ const cajasTN25 = Math.ceil(
   canales,
   montantes,
   rollosBanda,
-  fijaciones,
   cajasTN25,
   sacosJuntas,
   rollosCinta,
@@ -397,16 +392,6 @@ const cajasTN25 = Math.ceil(
 
                       <td className="p-3 text-right">
                         {resultado.rollosBanda}
-                      </td>
-                    </tr>
-
-                    <tr className="border-t">
-                      <td className="p-3">
-                        Fijaciones
-                      </td>
-
-                      <td className="p-3 text-right">
-                        {resultado.fijaciones}
                       </td>
                     </tr>
 
