@@ -167,7 +167,7 @@ export default function ResultsPanel({
       className="space-y-6"
     >
       {/* 2. Tabla de materiales */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-sm border p-6">
         <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
           <div>
             <h3 className="font-display font-extrabold text-slate-900 text-sm flex items-center gap-2">
@@ -178,8 +178,8 @@ export default function ResultsPanel({
         </div>
 
         {/* Table rendering based on tab */}
-        <div className="overflow-x-auto no-print">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto no-print max-w-md">
+          <table className="w-full text-sm border">
             <thead>
               <tr className="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/50">
                 <th className="py-3 px-4 sm:px-6">
