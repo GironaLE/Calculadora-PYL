@@ -7,9 +7,7 @@ import React from 'react';
 import { 
   CeilingInputs 
 } from '../types';
-import { 
-  CheckCircle2, AlertCircle, Info, HelpCircle 
-} from 'lucide-react';
+import React from 'react';
 
 interface CeilingFormProps {
   inputs: CeilingInputs;
@@ -34,22 +32,16 @@ export default function CeilingForm({
 
   return (
     <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-6 font-sans">
-      <div className="border-b border-slate-100 pb-4">
-        <div>
-          <h2 className="font-display font-extrabold text-slate-900 text-lg flex items-center gap-2">
-            <span className="w-2 h-5 bg-blue-600 rounded-full" />
-            Datos del techo
-          </h2>
-          <p className="text-xs text-slate-500 mt-0.5">Definición de parámetros geométricos y modulación</p>
-        </div>
-      </div>
+      <h2 className="text-2xl font-bold mb-4">
+  Datos del techo
+</h2>
 
       <div className="space-y-5">
         {/* Selector de método de entrada */}
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-            Método de Cálculo <span className="text-red-500">*</span>
-          </label>
+          <label className="block mb-2 font-medium">
+  Método de cálculo
+</label>
           <select
             value={inputs.calculoPorM2 ? 'm2' : 'dims'}
             onChange={(e) => {
@@ -60,7 +52,7 @@ export default function CeilingForm({
                 superficieM2: inputs.superficieM2 || (inputs.largo * inputs.ancho) || 24
               });
             }}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/15 focus:border-blue-500 cursor-pointer"
+            className="w-full border rounded-lg px-3 py-2"
           >
             <option value="dims">📐 Por Largo y Ancho (Dimensiones)</option>
             <option value="m2">🧱 Por Metros Cuadrados (m²)</option>
@@ -74,7 +66,6 @@ export default function CeilingForm({
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
                 Superficie Total <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] font-mono text-slate-400">Unidad: Metros²</span>
             </div>
             
             <div className="relative">
@@ -92,15 +83,8 @@ export default function CeilingForm({
               />
               <div className="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center space-x-1.5">
                 <span className="text-xs font-bold text-slate-400">m²</span>
-                {showValidationMock && <CheckCircle2 className="w-4 h-4 text-emerald-500" />}
               </div>
             </div>
-            
-            {showValidationMock && (
-              <p className="text-[11px] text-emerald-600 font-medium mt-1 flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3" /> Valor correcto (Superficie válida dentro de límites de obra)
-              </p>
-            )}
           </div>
         ) : (
           /* Largo & Ancho Fields */
@@ -129,15 +113,9 @@ export default function CeilingForm({
                 />
                 <div className="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center space-x-1.5">
                   <span className="text-xs font-bold text-slate-400">m</span>
-                  {showValidationMock && <CheckCircle2 className="w-4 h-4 text-emerald-500" />}
                 </div>
               </div>
-              
-              {showValidationMock && (
-                <p className="text-[11px] text-emerald-600 font-medium mt-1 flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" /> Valor correcto (Largo válido dentro de límites del fabricante)
-                </p>
-              )}
+      
             </div>
 
             {/* Ancho Field */}
@@ -164,7 +142,7 @@ export default function CeilingForm({
                 />
                 <div className="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center space-x-1.5">
                   <span className="text-xs font-bold text-slate-400">m</span>
-                  {showValidationMock && <AlertCircle className="w-4 h-4 text-rose-500" />}
+                
                 </div>
               </div>
 
@@ -223,7 +201,7 @@ export default function CeilingForm({
           <select
             value={inputs.medidaPlaca}
             onChange={(e) => handleInputChange('medidaPlaca', e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/15 focus:border-blue-500"
+            className="w-full border rounded-lg px-3 py-2"
           >
             <option value="2000 × 1200">2000 × 1200 mm (2.40 m²)</option>
             <option value="2500 × 1200">2500 × 1200 mm (3.00 m²)</option>
