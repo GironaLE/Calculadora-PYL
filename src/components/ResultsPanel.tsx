@@ -170,8 +170,9 @@ export default function ResultsPanel({
       <div className="bg-white rounded-2xl shadow-sm border p-6">
         <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
           <div>
-            <h3 className="font-display font-extrabold text-slate-900 text-sm flex items-center gap-2">
-              <span className="w-1.5 h-4 rounded-full bg-blue-600" />
+            <h2 className="text-xl font-bold mb-4">
+  Ficha Técnica Oficial
+</h2>
               Ficha Técnica Oficial
             </h3>
           </div>
@@ -181,12 +182,12 @@ export default function ResultsPanel({
         <div className="overflow-x-auto no-print max-w-md">
           <table className="w-full text-sm border">
             <thead>
-              <tr className="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/50">
-                <th className="py-3 px-4 sm:px-6">
+              <tr className="bg-slate-100">
+                <th className="text-left p-3">
   Material
 </th>
 
-<th className="py-3 px-4 text-right">
+<th className="text-right p-3">
   Cantidad
 </th>
 
@@ -195,13 +196,13 @@ export default function ResultsPanel({
             <tbody className="divide-y divide-slate-100 font-sans text-xs">
   {result?.materiales.map((row, idx) => (
     <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-      <td className="py-3 px-4 sm:px-6">
+      <td className="p-3">
         <span className="font-semibold text-slate-800">
           {row.nombre}
         </span>
       </td>
 
-      <td className="py-3 px-4 text-right font-bold text-blue-600">
+      <td className="p-3 text-right">
         {row.unidadesComerciales.toLocaleString('es-ES')}
       </td>
     </tr>
