@@ -19,9 +19,6 @@ export default function Header() {
         <h1 className="font-display font-extrabold text-sm md:text-base text-slate-900 tracking-tight">
           Calculadora de Techos Continuos PYL
         </h1>
-        <p className="text-[9px] text-slate-400 font-mono tracking-normal">
-          Módulo Técnico: Estructura Cruzada F47
-        </p>
       </div>
 
       {/* Right: Empty spacer to balance layout */}
