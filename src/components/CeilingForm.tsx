@@ -177,17 +177,6 @@ export default function CeilingForm({
           </p>
         </div>
 
-        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4">
-          <div className="flex justify-between items-center mb-1">
-            <span className="text-xs font-bold text-slate-700">Separación Maestra Inferior</span>
-            <span className="text-xs font-mono font-bold bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-md border border-blue-100">
-              500 mm
-            </span>
-          </div>
-          <p className="text-[10px] text-slate-400 leading-relaxed">
-          </p>
-        </div>
-
         {/* Medida de placa selector */}
         <div>
           <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
