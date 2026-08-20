@@ -367,7 +367,7 @@ export default function Trasdosados() {
                   <>
                     <tr className="border-t">
                       <td className="p-3">
-                        Maestra
+                        Maestra Omega
                       </td>
                       <td className="p-3 text-right">
                         {resultado.maestras}
