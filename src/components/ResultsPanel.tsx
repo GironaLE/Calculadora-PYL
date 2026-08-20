@@ -173,8 +173,6 @@ export default function ResultsPanel({
             <h2 className="text-xl font-bold mb-4">
   Ficha Técnica Oficial
 </h2>
-              Ficha Técnica Oficial
-            </h3>
           </div>
         </div>
 
