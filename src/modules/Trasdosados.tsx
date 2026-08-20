@@ -78,46 +78,38 @@ export default function Trasdosados() {
       };
     }
 
-    const perfilUMl =
-      superficie * 0.7;
+    const canalMl =
+  superficie * 0.7;
 
-    const perfilesU = Math.ceil(
-      perfilUMl / 3
-    );
+const canales = Math.ceil(
+  canalMl / 3
+);
 
-    const montanteMl =
-      superficie * 2;
+const montanteMl =
+  superficie * 2;
 
-    const montantes = Math.ceil(
-      montanteMl / alturaPlaca
-    );
+const montantes = Math.ceil(
+  montanteMl / alturaPlaca
+);
 
-    const bandaMl =
-      superficie * 0.8;
+const bandaMl =
+  superficie * 0.8;
 
-    const rollosBanda = Math.ceil(
-      bandaMl / 30
-    );
+const rollosBanda = Math.ceil(
+  bandaMl / 30
+);
 
-    const anclajes = Math.ceil(
-      superficie * 0.7
-    );
+const fijaciones = Math.ceil(
+  superficie * 1.6
+);
 
-    const tn25 = Math.ceil(
-      superficie * 1.4
-    );
+const tn25 = Math.ceil(
+  superficie * 14
+);
 
-    const cajasTN25 = Math.ceil(
-      tn25 / 1000
-    );
-
-    const tn35 = Math.ceil(
-      superficie * 14
-    );
-
-    const cajasTN35 = Math.ceil(
-      tn35 / 1000
-    );
+const cajasTN25 = Math.ceil(
+  tn25 / 1000
+);
 
     const pastaJuntasKg =
       superficie * 0.3;
@@ -134,24 +126,15 @@ export default function Trasdosados() {
     );
 
     return {
-      placas,
-
-      perfilesU,
-
-      montantes,
-
-      rollosBanda,
-
-      anclajes,
-
-      cajasTN25,
-
-      cajasTN35,
-
-      sacosJuntas,
-
-      rollosCinta,
-    };
+  placas,
+  canales,
+  montantes,
+  rollosBanda,
+  fijaciones,
+  cajasTN25,
+  sacosJuntas,
+  rollosCinta,
+};
   }, [
     sistema,
     superficie,
@@ -186,8 +169,8 @@ export default function Trasdosados() {
                 W621 Semidirecto
               </option>
 
-              <option value="W623">
-                W623 Autoportante
+              <option value="W625">
+                W625 Autoportante
               </option>
             </select>
           </div>
@@ -385,21 +368,21 @@ export default function Trasdosados() {
                   </>
                 )}
 
-                {sistema === 'W623' && (
+                {sistema === 'W625' && (
                   <>
                     <tr className="border-t">
                       <td className="p-3">
-                        Perfil U 30x30
+                        Canal 48x30
                       </td>
 
                       <td className="p-3 text-right">
-                        {resultado.perfilesU}
+                        {resultado.canales}
                       </td>
                     </tr>
 
                     <tr className="border-t">
                       <td className="p-3">
-                        Maestra 60x27
+                        Montante 46x36
                       </td>
 
                       <td className="p-3 text-right">
@@ -419,11 +402,11 @@ export default function Trasdosados() {
 
                     <tr className="border-t">
                       <td className="p-3">
-                        Anclaje Directe
+                        Fijaciones
                       </td>
 
                       <td className="p-3 text-right">
-                        {resultado.anclajes}
+                        {resultado.fijaciones}
                       </td>
                     </tr>
 
@@ -434,16 +417,6 @@ export default function Trasdosados() {
 
                       <td className="p-3 text-right">
                         {resultado.cajasTN25}
-                      </td>
-                    </tr>
-
-                    <tr className="border-t">
-                      <td className="p-3">
-                        Tornillos TN 35
-                      </td>
-
-                      <td className="p-3 text-right">
-                        {resultado.cajasTN35}
                       </td>
                     </tr>
                   </>
