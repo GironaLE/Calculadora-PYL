@@ -152,14 +152,12 @@ export default function CeilingForm({
                 </p>
               ) : (
                 <p className="text-[10px] text-slate-400 mt-1">
-                  Ancho máximo recomendado sin junta técnica: 15m
                 </p>
               )}
             </div>
           </>
         )}
 
-        {/* Separación maestra superior */}
         <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4">
           <div className="flex justify-between items-center mb-1.5">
             <span className="text-xs font-bold text-slate-700">Separación Maestra Superior</span>
@@ -176,11 +174,9 @@ export default function CeilingForm({
             </select>
           </div>
           <p className="text-[10px] text-slate-400 leading-relaxed">
-            Distancia regulable recomendada entre líneas superiores F47 para asegurar la rigidez del plano de suspensión primaria.
           </p>
         </div>
 
-        {/* Separación maestra inferior */}
         <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4">
           <div className="flex justify-between items-center mb-1">
             <span className="text-xs font-bold text-slate-700">Separación Maestra Inferior</span>
@@ -189,7 +185,6 @@ export default function CeilingForm({
             </span>
           </div>
           <p className="text-[10px] text-slate-400 leading-relaxed">
-            Distancia estandarizada entre líneas de perfil clip secundario F47 para el atornillado directo de placas.
           </p>
         </div>
 
