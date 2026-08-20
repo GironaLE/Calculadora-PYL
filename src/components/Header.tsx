@@ -16,7 +16,7 @@ export default function Header() {
 
       {/* Center: Title (Responsive, hidden on extra small screens) */}
       <div className="text-right sm:text-center hidden sm:block">
-        <h1 className="font-display font-extrabold text-sm md:text-base text-slate-900 tracking-tight">
+        <h1 className="text-3xl font-bold">
           Calculadora de Techos Continuos PYL
         </h1>
       </div>
