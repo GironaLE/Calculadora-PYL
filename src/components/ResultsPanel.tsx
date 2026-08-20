@@ -4,7 +4,6 @@
  */
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { CeilingInputs, AppState } from '../types';
 import { CalculationResult } from '../engine/calculator';
 import { generateProfessionalPDF } from '../utils/pdfGenerator';
@@ -32,7 +31,6 @@ export default function ResultsPanel({
 }: ResultsPanelProps) {
 
   const [copied, setCopied] = useState(false);
-  const [showDetail, setShowDetail] = useState(false);
   const [activeTab, setActiveTab] = useState<'tecnico' | 'compra'>('tecnico');
 
   const area = result?.superficie || 0;
@@ -178,13 +176,7 @@ export default function ResultsPanel({
               <span className="w-1.5 h-4 rounded-full bg-blue-600" />
               Ficha Técnica Oficial
             </h3>
-            <p className="text-[11px] text-slate-400 mt-0.5">
-              Cantidades reales exactas calculadas con el coeficiente de dosificación de obra
-            </p>
           </div>
-          <span className="text-[10px] self-start sm:self-auto px-2.5 py-1 rounded-full font-bold border bg-blue-50 border-blue-200 text-blue-700">
-            Coeficientes Excel Activos
-          </span>
         </div>
 
         {/* Table rendering based on tab */}
@@ -192,11 +184,14 @@ export default function ResultsPanel({
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/50">
-                <th className="py-3 px-4 sm:px-6">Material (Orden Excel)</th>
-                <th className="py-3 px-4 text-center">Cant. Real</th>
-                <th className="py-3 px-4 text-center">Unidad</th>
-                <th className="py-3 px-4 text-left hidden sm:table-cell">Formato Comercial</th>
-                <th className="py-3 px-4 text-right">Cantidad de Compra</th>
+                <th className="py-3 px-4 sm:px-6">
+  Material
+</th>
+
+<th className="py-3 px-4 text-right">
+  Cantidad
+</th>
+
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-sans text-xs">
@@ -237,66 +232,7 @@ export default function ResultsPanel({
 
         {/* Expandable Step-by-Step Details */}
         <div className="border-t border-slate-100 bg-slate-50/50 p-4 no-print">
-          <button 
-            onClick={() => setShowDetail(!showDetail)}
-            className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs transition-all cursor-pointer shadow-xs"
-          >
-            <span>{showDetail ? 'Ocultar Desglose Matemático' : '🔍 Ver detalle matemático paso a paso (Excel)'}</span>
-            {showDetail ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-          </button>
-
-          <AnimatePresence>
-            {showDetail && result && (
-              <motion.div 
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden mt-4 bg-white border border-slate-200 rounded-2xl p-5 space-y-4 shadow-inner text-slate-600 font-mono text-xs leading-relaxed"
-              >
-                <h4 className="text-xs font-bold text-slate-900 border-b border-slate-100 pb-2 uppercase tracking-wider font-display">
-                  Fórmulas Matemáticas de la Ficha Excel:
-                </h4>
-
-                <div className="space-y-3 divide-y divide-slate-100">
-                  <div className="pt-2">
-                    <span className="text-blue-600 font-bold block mb-1">📐 Geometría de Entrada</span>
-                    {inputs.calculoPorM2 ? (
-                      <div>Superficie introducida directamente: <span className="text-slate-900 font-bold">{area} m²</span></div>
-                    ) : (
-                      <div>Superficie útil = Largo ({inputs.largo}m) × Ancho ({inputs.ancho}m) = <span className="text-slate-900 font-bold">{area} m²</span></div>
-                    )}
-                    <div>Perímetro = {inputs.calculoPorM2 ? `Estimación teórica 4 × √${inputs.superficieM2}` : `(Largo + Ancho) × 2`} = <span className="text-slate-900 font-bold">{perimetro} m</span></div>
-                  </div>
-
-                  <div className="pt-3">
-                    <span className="text-blue-600 font-bold block mb-1">📦 Coeficiente y Margen de Desperdicio (+5% si está activo)</span>
-                    <div>Margen aplicado actualmente: <span className="text-slate-900 font-bold">{inputs.desperdicio ? '1.05 (+5%)' : '1.00 (Sin desperdicio)'}</span></div>
-                    <div className="text-[11px] text-slate-500 mt-1">
-                      Fórmula general: <code className="bg-slate-100 px-1 py-0.5 rounded text-slate-800">Cantidad Real = Superficie × Coeficiente × FactorDesperdicio</code>
-                    </div>
-                  </div>
-
-                  <div className="pt-3">
-                    <span className="text-blue-600 font-bold block mb-1">🧮 Detalle de Multiplicaciones Directas</span>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-[11px]">
-                      <div>• Placa PYL: <span className="text-slate-900 font-bold">{area}</span> × 1.00 = {getMatQtyReal('Placa PYL')} m²</div>
-                      <div>• Maestra: <span className="text-slate-900 font-bold">{area}</span> × 3.20 = {getMatQtyReal('Maestra F47')} ml</div>
-                      <div>• Perfil Perimetral: <span className="text-slate-900 font-bold">{area}</span> × 0.40 = {getMatQtyReal('Perfil Clip')} ml</div>
-                      <div>• Tornillo TN 25: <span className="text-slate-900 font-bold">{area}</span> × 17 = {getMatQtyReal('Tornillo TN 25')} uds</div>
-                      <div>• Horquilla / Penjant: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Horquilla / Penjant')} uds</div>
-                      <div>• Fijaciones: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Fijaciones')} uds</div>
-                      <div>• Varilla 1 m: <span className="text-slate-900 font-bold">{area}</span> × 1.30 = {getMatQtyReal('Varilla 1 m')} uds</div>
-                      <div>• Conector de Maestra: <span className="text-slate-900 font-bold">{area}</span> × 0.60 = {getMatQtyReal('Conector de Maestra')} uds</div>
-                      <div>• Caballete: <span className="text-slate-900 font-bold">{area}</span> × 2.30 = {getMatQtyReal('Caballete F47')} uds</div>
-                      <div>• Pasta de juntas: <span className="text-slate-900 font-bold">{area}</span> × 0.40 = {getMatQtyReal('Pasta de juntas')} kg</div>
-                      <div>• Cinta: <span className="text-slate-900 font-bold">{area}</span> × 1.20 = {getMatQtyReal('Cinta')} ml</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                   
         </div>
       </div>
 
@@ -339,34 +275,35 @@ export default function ResultsPanel({
 
         {/* Technical List table */}
         <div className="space-y-2">
-          <h2 className="text-sm font-bold border-b border-slate-300 pb-1 uppercase">2. Ficha Técnica de Cómputos Métricos</h2>
+          <h2 className="text-sm font-bold border-b border-slate-300 pb-1">
+  Ficha Técnica Oficial
+</h2>
           <table className="w-full text-xs">
             <thead>
               <tr className="bg-slate-100 font-bold text-left">
-                <th className="p-2">Material / Componente</th>
-                <th className="p-2 text-center">Cantidad Real</th>
+                <th className="p-2">Material</th>
+                <th className="p-2 text-center">Cantidad</th>
                 <th className="p-2 text-center">Unidad</th>
-                <th className="p-2">Formato Comercial</th>
-                <th className="p-2 text-right">Unidades necesarias</th>
+                <th className="p-2">Formato</th>
+                <th className="p-2 text-right">Compra</th>
               </tr>
             </thead>
             <tbody>
               {result?.materiales.map((row, idx) => (
                 <tr key={idx} className="border-b border-slate-200">
-                  <td className="p-2"><strong>{idx + 1}. {row.nombre}</strong></td>
-                  <td className="p-2 text-center">{row.cantidadReal.toLocaleString('es-ES')}</td>
-                  <td className="p-2 text-center">{row.unidad}</td>
-                  <td className="p-2">{row.formatoComercial}</td>
-                  <td className="p-2 text-right font-bold text-blue-600">{row.unidadesComerciales}</td>
+                  <td className="py-3 px-4 sm:px-6">
+  {row.nombre}
+</td>
+
+<td className="py-3 px-4 text-right font-semibold">
+  {row.unidadesComerciales}
+</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <div className="pt-8 text-center text-[10px] text-slate-400 border-t border-slate-200">
-          <p>Calculadora de Techos Continuos PYL F47 | Versión 1.5.0 (Producción) | Soportado por KnCompute Systems S.A.</p>
-        </div>
       </div>
     </motion.div>
   );
