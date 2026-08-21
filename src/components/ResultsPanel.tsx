@@ -177,25 +177,25 @@ export default function ResultsPanel({
         </div>
 
         {/* Table rendering based on tab */}
-        <div className="overflow-hidden rounded-xl border no-print">
-          <table className="w-full text-sm border">
+        <div className="overflow-hidden rounded-xl border">
+          <table className="w-full text-sm">
             <thead>
-              <tr className="bg-slate-100 border-b">
-                <th className="text-left p-4">
+              <tr className="bg-slate-100">
+                <th className="text-left p-3">
   Material
 </th>
 
-<th className="text-right p-4">
+<th className="text-right p-3">
   Cantidad
 </th>
 
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="border-t">
   {result?.materiales.map((row, idx) => (
     <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-      <td className="p-4">
-        <span className="font-semibold text-slate-800">
+      <td className="p-3">
+        <span className="border-t">
           {row.nombre}
         </span>
       </td>
@@ -210,7 +210,7 @@ export default function ResultsPanel({
         </div>
 
         {/* Expandable Step-by-Step Details */}
-        <div className="border-t border-slate-100 bg-slate-50/50 p-4 no-print">
+        <div className="overflow-hidden rounded-xl border">
                    
         </div>
       </div>
@@ -248,14 +248,14 @@ export default function ResultsPanel({
 
         {/* Technical List table */}
         <div className="space-y-2">
-          <h2 className="text-sm font-bold border-b border-slate-300 pb-1">
+          <h2 className="text-xl font-bold mb-4">
   Ficha Técnica Oficial
 </h2>
-          <table className="w-full text-xs">
+          <table className="w-full text-sm">
             <thead>
               <tr className="bg-slate-100 font-bold text-left">
-                <th className="p-2">Material</th>
-<th className="p-2 text-right">Cantidad</th>
+                <th className="p-3">Material</th>
+<th className="p-3 text-right">Cantidad</th>
               </tr>
             </thead>
             <tbody>
