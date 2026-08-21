@@ -180,7 +180,7 @@ export default function ResultsPanel({
         <div className="overflow-hidden rounded-xl border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b">
+              <tr className="bg-slate-100 border-b">
                 <th className="text-left p-3">
   Material
 </th>
@@ -195,13 +195,13 @@ export default function ResultsPanel({
   <tbody>
   {result?.materiales.map((row, idx) => (
     <tr
-      key={idx}
-      className={
-        idx > 0
-          ? "border-t hover:bg-slate-50/50 transition-colors"
-          : "hover:bg-slate-50/50 transition-colors"
-      }
-    >
+  key={idx}
+  className={
+    idx < result.materiales.length - 1
+      ? "border-t hover:bg-slate-50/50 transition-colors"
+      : "hover:bg-slate-50/50 transition-colors"
+  }
+>
      <td className="p-3">
   {row.nombre}
 </td>
