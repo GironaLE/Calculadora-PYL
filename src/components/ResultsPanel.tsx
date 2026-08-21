@@ -177,7 +177,7 @@ export default function ResultsPanel({
         </div>
 
         {/* Table rendering based on tab */}
-        <div className="overflow-hidden rounded-xl border border-slate-300 no-print">
+        <div className="overflow-hidden rounded-xl border no-print">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-slate-100 border-b">
@@ -195,9 +195,13 @@ export default function ResultsPanel({
   <tbody>
   {result?.materiales.map((row, idx) => (
     <tr
-      key={idx}
-      className="border-b border-slate-200 hover:bg-slate-50/50 transition-colors"
-    >
+  key={idx}
+  className={
+    idx < result.materiales.length - 1
+      ? "border-b border-slate-200 hover:bg-slate-50/50 transition-colors"
+      : "hover:bg-slate-50/50 transition-colors"
+  }
+>
      <td className="p-3">
   {row.nombre}
 </td>
