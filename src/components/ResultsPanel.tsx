@@ -191,13 +191,20 @@ export default function ResultsPanel({
 
               </tr>
             </thead>
+
+  <tbody>
   {result?.materiales.map((row, idx) => (
-    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-      <td className="p-3">
-        <span className="border-t">
-          {row.nombre}
-        </span>
-      </td>
+    <tr
+      key={idx}
+      className={
+        idx > 0
+          ? "border-t hover:bg-slate-50/50 transition-colors"
+          : "hover:bg-slate-50/50 transition-colors"
+      }
+    >
+     <td className="p-3">
+  {row.nombre}
+</td>
 
       <td className="p-3 text-right">
         {row.unidadesComerciales.toLocaleString('es-ES')}
