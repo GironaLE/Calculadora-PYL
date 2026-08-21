@@ -170,7 +170,7 @@ export default function ResultsPanel({
       <div className="bg-white rounded-2xl shadow-sm border p-4 inline-block">
         <div className="p-3 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
           <div>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-xl font-bold mb-4">
   Ficha Técnica Oficial
 </h2>
           </div>
@@ -181,20 +181,20 @@ export default function ResultsPanel({
           <table className="w-full text-sm border">
             <thead>
               <tr className="bg-slate-100 border-b">
-                <th className="text-left p-3">
+                <th className="text-left p-4">
   Material
 </th>
 
-<th className="text-right p-3">
+<th className="text-right p-4">
   Cantidad
 </th>
 
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 font-sans text-xs">
+            <tbody className="divide-y divide-slate-100">
   {result?.materiales.map((row, idx) => (
     <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-      <td className="p-3">
+      <td className="p-4">
         <span className="font-semibold text-slate-800">
           {row.nombre}
         </span>
