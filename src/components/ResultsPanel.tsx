@@ -177,8 +177,8 @@ export default function ResultsPanel({
         </div>
 
         {/* Table rendering based on tab */}
-        <div className="overflow-hidden rounded-xl no-print">
-          <table className="w-full text-sm">
+<div className="overflow-hidden rounded-xl border border-slate-300 no-print">
+  <table className="w-full text-sm">
             <thead>
               <tr className="bg-slate-100 border-b">
                 <th className="text-left p-3">
