@@ -216,9 +216,7 @@ export default function ResultsPanel({
         </div>
 
         {/* Expandable Step-by-Step Details */}
-        <div className="overflow-hidden rounded-xl border">
-                   
-        </div>
+        
       </div>
 
 
