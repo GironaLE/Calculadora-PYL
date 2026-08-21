@@ -167,8 +167,8 @@ export default function ResultsPanel({
       className="space-y-6"
     >
       {/* 2. Tabla de materiales */}
-      <div className="bg-white rounded-2xl shadow-sm border p-3">
-        <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
+      <div className="bg-white rounded-2xl shadow-sm border p-3 max-w-md">
+        <div className="p-3 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-slate-50/30">
           <div>
             <h2 className="text-2xl font-bold mb-4">
   Ficha Técnica Oficial
@@ -177,10 +177,10 @@ export default function ResultsPanel({
         </div>
 
         {/* Table rendering based on tab */}
-        <div className="overflow-hidden rounded-xl border max-w-md no-print">
+        <div className="overflow-hidden rounded-xl border w-fit no-print">
           <table className="w-full text-sm border">
             <thead>
-              <tr className="border-b">
+              <tr className="bg-slate-100 border-b">
                 <th className="p-3 font-semibold">
   Material
 </th>
