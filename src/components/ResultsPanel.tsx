@@ -195,13 +195,9 @@ export default function ResultsPanel({
   <tbody>
   {result?.materiales.map((row, idx) => (
     <tr
-  key={idx}
-  className={
-    idx < result.materiales.length - 1
-      ? "border-t hover:bg-slate-50/50 transition-colors"
-      : "hover:bg-slate-50/50 transition-colors"
-  }
->
+      key={idx}
+      className="border-b border-slate-200 hover:bg-slate-50/50 transition-colors"
+    >
      <td className="p-3">
   {row.nombre}
 </td>
@@ -267,13 +263,9 @@ export default function ResultsPanel({
             <tbody>
   {result?.materiales.map((row, idx) => (
     <tr
-      key={idx}
-      className={
-        idx !== result.materiales.length - 1
-          ? "border-b"
-          : ""
-      }
-    >
+  key={idx}
+  className="hover:bg-slate-50/50 transition-colors"
+>
 
 <td className="py-3 px-4 text-right font-semibold">
   {row.unidadesComerciales}
