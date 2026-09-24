@@ -58,6 +58,9 @@ export function calcularMateriales(
   const cantRealClip =
   perimetro * factorDesperdicio;
   const udsComercialesClip = Math.ceil(cantRealClip / 3);
+  console.log("PERIMETRO =", perimetro);
+console.log("CLIP REAL =", cantRealClip);
+console.log("CLIP COMERCIAL =", udsComercialesClip);
 
   // 4. Tornillo TN 25
   const cantRealTornillo =
