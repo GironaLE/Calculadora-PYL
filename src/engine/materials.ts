@@ -37,6 +37,7 @@ export function parseMedidaPlaca(medidaStr: string): { anchoM: number; largoM: n
  */
 export function calcularMateriales(
   superficie: number,
+  perimetro: number,
   desperdicio: boolean,
   medidaPlacaStr: string
 ): MaterialResult[] {
@@ -58,7 +59,9 @@ export function calcularMateriales(
   const udsComercialesClip = Math.ceil(cantRealClip / 3);
 
   // 4. Tornillo TN 25
-  const cantRealTornillo = superficie * MATERIAL_COEFFICIENTS.tornilloTN25 * factorDesperdicio;
+  const cantRealClip =
+  perimetro * factorDesperdicio;
+``
   const udsComercialesTornillo = Math.ceil(cantRealTornillo / 1000);
 
   // 5. Horquilla / Penjant
