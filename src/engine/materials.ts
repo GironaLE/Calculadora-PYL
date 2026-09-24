@@ -55,7 +55,8 @@ export function calcularMateriales(
   const udsComercialesMaestra = Math.ceil(cantRealMaestra / 3);
 
   // 3. Perfil Perimetral
-  const cantRealClip = superficie * MATERIAL_COEFFICIENTS.perfilClip * factorDesperdicio;
+  const cantRealClip =
+  perimetro * factorDesperdicio;
   const udsComercialesClip = Math.ceil(cantRealClip / 3);
 
   // 4. Tornillo TN 25
