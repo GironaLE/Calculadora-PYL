@@ -62,7 +62,7 @@ export function calcularMateriales(
   // 4. Tornillo TN 25
   const cantRealClip =
   perimetro * factorDesperdicio;
-``
+
   const udsComercialesTornillo = Math.ceil(cantRealTornillo / 1000);
 
   // 5. Horquilla / Penjant
