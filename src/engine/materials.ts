@@ -63,10 +63,10 @@ console.log("CLIP REAL =", cantRealClip);
 console.log("CLIP COMERCIAL =", udsComercialesClip);
 
   // 4. Tornillo TN 25
-  const cantRealTornillo =
-  perimetro * factorDesperdicio;
+const cantRealTornillo =
+  superficie * MATERIAL_COEFFICIENTS.tornilloTN25 * factorDesperdicio;
 
-  const udsComercialesTornillo = Math.ceil(cantRealTornillo / 1000);
+const udsComercialesTornillo = Math.ceil(cantRealTornillo / 1000);
 
   // 5. Horquilla / Penjant
   const cantRealHorquilla = superficie * MATERIAL_COEFFICIENTS.horquilla * factorDesperdicio;
