@@ -87,7 +87,12 @@ export function calcularTecho(inputs: CeilingInputs): CalculationResult {
   perimetro = Number(perimetro.toFixed(2));
 
   // 3. Compute material rows based on surface and coefficients
-  const materiales = calcularMateriales(superficie, !!inputs.desperdicio, inputs.medidaPlaca);
+  const materiales = calcularMateriales(
+  superficie,
+  perimetro,
+  !!inputs.desperdicio,
+  inputs.medidaPlaca
+);
 
   return {
     valid: true,
